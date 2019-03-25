@@ -1,0 +1,48 @@
+html
+    head
+        title Death Note
+        script( src="js/jquery-1.9.0.min.js" )
+        script( src="js/jquery-ui-1.7.2.custom.min.js" )
+        script( src="js/jHtmlArea-0.8.js" )
+        script( src="js/client.js" )
+        link( rel="stylesheet", href="style/jHtmlArea.css" )
+        link( rel="stylesheet" type="text/css" href="style/jqueryui/ui-lightness/jquery-ui-1.7.2.custom.css" )
+        
+body
+    input( type="button" id="sendButton" onclick="sendDeathNote()" value="Send Death Note" )
+    br
+    table
+        tr
+            td
+                | To:
+            td
+                input( type="email" id="toField" )
+        tr
+            td
+                | From:
+            td
+                input( type="email" id="fromField" )
+        tr
+            td
+                | Subject:
+            td
+                input( type="text" id="subjectField" )
+        tr
+            td
+                | Timeout (s):
+            td
+                input( type="text" id="timeoutField" )
+    | Body:
+    br
+    textarea( id="bodyField" cols="80" rows="30" )
+    br
+    
+    
+    br
+    div( id="responseDiv" )
+    
+    script.
+        /*global $*/
+        $(function(){
+            $("textarea").htmlarea();
+        });
